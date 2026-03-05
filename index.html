@@ -31,50 +31,40 @@
 <!-- Table -->
 <div class="overflow-hidden rounded-lg border">
 
-<table class="w-full text-sm">
+<table class="w-full text-sm" id="table">
 
 <thead class="bg-gray-200">
 <tr>
-<th class="p-3 text-left">No</th>
-<th class="p-3 text-left">Nama Barang</th>
-<th class="p-3 text-center">Qty</th>
-<th class="p-3 text-right">Harga</th>
-<th class="p-3 text-right">Jumlah</th>
+<th class="p-3">No</th>
+<th class="p-3">Nama Barang</th>
+<th class="p-3">Qty</th>
+<th class="p-3">Harga</th>
+<th class="p-3">Jumlah</th>
 </tr>
 </thead>
 
-<tbody>
+<tbody id="tbody">
 
-<tr class="border-t">
-<td class="p-3">1</td>
-<td class="p-3"></td>
-<td class="p-3 text-center"></td>
-<td class="p-3 text-right"></td>
-<td class="p-3 text-right"></td>
-</tr>
+<tr>
+<td class="p-3 text-center">1</td>
 
-<tr class="border-t">
-<td class="p-3">2</td>
-<td class="p-3"></td>
-<td class="p-3 text-center"></td>
-<td class="p-3 text-right"></td>
-<td class="p-3 text-right"></td>
-</tr>
+<td class="p-3">
+<input placeholder="Nama Barang" class="w-full border p-1">
+</td>
 
-<tr class="border-t">
-<td class="p-3">3</td>
-<td class="p-3"></td>
-<td class="p-3 text-center"></td>
-<td class="p-3 text-right"></td>
-<td class="p-3 text-right"></td>
-</tr>
+<td class="p-3">
+<input type="number" class="qty w-full border p-1" placeholder="Qty" oninput="hitung()">
+</td>
 
-<tr class="border-t">
-<td class="p-3">4</td>
-<td class="p-3"></td>
-<td class="p-3 text-center">-</td>
-<td class="p-3 text-right"></td>
-<td class="p-3 text-right"></td>
+<td class="p-3">
+<input type="number" class="harga w-full border p-1" placeholder="Harga" oninput="hitung()">
+</td>
+
+<td class="p-3">
+<input type="number" class="jumlah w-full border p-1" placeholder="Jumlah" oninput="hitung()">
+</td>
+
+
 </tr>
 
 </tbody>
@@ -82,11 +72,26 @@
 <tfoot class="bg-gray-100 font-semibold">
 <tr>
 <td colspan="4" class="p-3 text-right">TOTAL</td>
-<td class="p-3 text-right"></td>
+<td id="total" class="p-3 text-right">0</td>
 </tr>
 </tfoot>
 
 </table>
+
+</div>
+
+<!-- Button -->
+<div class="flex gap-4 mt-6">
+
+<button onclick="tambahBaris()" class="bg-blue-500 text-white px-4 py-2 rounded">
+Tambah Barang
+</button>
+
+<button onclick="downloadNota()" class="bg-green-500 text-white px-4 py-2 rounded">
+Download / Print
+</button>
+
+</div>
 
 </div>
 
