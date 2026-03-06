@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nota Panjoel Garage</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nota Panjoel Garage</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 p-10">
 
 <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
 
-<!-- Header -->
 <div class="text-center mb-8">
 <h1 class="text-3xl font-bold">Panjoel Garage</h1>
 <p class="text-gray-500">Spesialis Motor 2T & 4T</p>
 </div>
 
-<div class="flex justify-between mb-6 text-sm">
-<div>
-<p>No Nota : ______</p>
-<p>Tanggal : ______</p>
-</div>
-
-<div>
-<p>Customer : ______</p>
-</div>
-</div>
-
-<!-- Table -->
 <div class="overflow-hidden rounded-lg border">
 
-<table class="w-full text-sm" id="table">
+<table class="w-full text-sm">
 
 <thead class="bg-gray-200">
 <tr>
@@ -40,12 +27,14 @@
 <th class="p-3">Qty</th>
 <th class="p-3">Harga</th>
 <th class="p-3">Jumlah</th>
+<th class="p-3">Aksi</th>
 </tr>
 </thead>
 
 <tbody id="tbody">
 
 <tr>
+
 <td class="p-3 text-center">1</td>
 
 <td class="p-3">
@@ -53,34 +42,39 @@
 </td>
 
 <td class="p-3">
-<input type="number" class="qty w-full border p-1" placeholder="Qty" oninput="hitung()">
+<input type="number" class="qty w-full border p-1" oninput="hitung()">
 </td>
 
 <td class="p-3">
-<input type="number" class="harga w-full border p-1" placeholder="Harga" oninput="hitung()">
+<input type="number" class="harga w-full border p-1" oninput="hitung()">
 </td>
 
 <td class="p-3">
-<input type="number" class="jumlah w-full border p-1" placeholder="Jumlah" oninput="hitung()">
+<input type="text" class="jumlah w-full border p-1 bg-gray-100" readonly>
 </td>
 
+<td class="p-3 text-center">
+<button onclick="hapusBaris(this)" class="text-red-500">✕</button>
+</td>
 
 </tr>
 
 </tbody>
 
 <tfoot class="bg-gray-100 font-semibold">
+
 <tr>
 <td colspan="4" class="p-3 text-right">TOTAL</td>
-<td id="total" class="p-3 text-right">0</td>
+<td id="total" class="p-3 text-right">Rp 0</td>
+<td></td>
 </tr>
+
 </tfoot>
 
 </table>
 
 </div>
 
-<!-- Button -->
 <div class="flex gap-4 mt-6">
 
 <button onclick="tambahBaris()" class="bg-blue-500 text-white px-4 py-2 rounded">
@@ -88,31 +82,14 @@ Tambah Barang
 </button>
 
 <button onclick="downloadNota()" class="bg-green-500 text-white px-4 py-2 rounded">
-Download / Print
+Print / Save PDF
 </button>
 
 </div>
 
 </div>
 
-<!-- Footer -->
-<div class="flex justify-between mt-12 text-sm">
-
-<div class="text-center">
-<p>Customer</p>
-<div class="h-16"></div>
-<p>(__________)</p>
-</div>
-
-<div class="text-center">
-<p>Panjoel Garage</p>
-<div class="h-16"></div>
-<p>(__________)</p>
-</div>
-
-</div>
-
-</div>
+<script src="main.js"></script>
 
 </body>
 </html>
