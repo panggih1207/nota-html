@@ -31,3 +31,16 @@ app.post("/nota" , (req,res)=> {
         )
 }) 
 
+
+// ambil semua nota
+app.get("/nota",(req,res)=>{
+
+  db.all("SELECT * FROM nota",(err,rows)=>{
+    res.json(rows)
+  })
+
+})
+
+app.listen(3000,()=>{
+  console.log("server jalan di http://localhost:3000")
+})
