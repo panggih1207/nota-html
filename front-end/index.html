@@ -7,27 +7,27 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100 p-10">
+<body class="bg-gray-100 p-3 sm:p-10">
 
-<div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-8">
+<div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-4 sm:p-8">
 
-<div class="text-center mb-8">
-<h1 class="text-3xl font-bold">Panjoel Garage</h1>
-<p class="text-gray-500">Spesialis Motor 2T & 4T</p>
+<div class="text-center mb-6">
+<h1 class="text-2xl sm:text-3xl font-bold">Panjoel Garage</h1>
+<p class="text-gray-500 text-sm">Spesialis Motor 2T & 4T</p>
 </div>
 
-<div class="overflow-hidden rounded-lg border">
+<div class="overflow-x-auto border rounded-lg">
 
-<table class="w-full text-sm">
+<table class="w-full text-sm min-w-[600px]">
 
 <thead class="bg-gray-200">
 <tr>
-<th class="p-3">No</th>
-<th class="p-3">Nama Barang</th>
-<th class="p-3">Qty</th>
-<th class="p-3">Harga</th>
-<th class="p-3">Jumlah</th>
-<th class="p-3">Aksi</th>
+<th class="p-2 sm:p-3">No</th>
+<th class="p-2 sm:p-3">Nama Barang</th>
+<th class="p-2 sm:p-3">Qty</th>
+<th class="p-2 sm:p-3">Harga</th>
+<th class="p-2 sm:p-3">Jumlah</th>
+<th class="p-2 sm:p-3">Aksi</th>
 </tr>
 </thead>
 
@@ -35,26 +35,27 @@
 
 <tr>
 
-<td class="p-3 text-center">1</td>
+<td class="p-2 sm:p-3 text-center">1</td>
 
-<td class="p-3">
-<input placeholder="Nama Barang" class="w-full border p-1">
+<td class="p-2 sm:p-3">
+<input placeholder="Nama Barang" class="w-full border p-1 rounded">
 </td>
 
-<td class="p-3">
-<input type="number" placeholder="Qty" class="qty w-full border p-1" oninput="hitung()">
+<td class="p-2 sm:p-3">
+<input type="number" placeholder="Qty" class="qty w-full border p-1 rounded" oninput="hitung()">
 </td>
 
-<td class="p-3">
-<input type="number" placeholder="Price"   class="harga w-full border p-1" oninput="hitung()">
+<td class="p-2 sm:p-3">
+<input type="number" placeholder="Price" class="harga w-full border p-1 rounded" oninput="hitung()">
 </td>
 
-<td class="p-3">
-<input type="text" placeholder="Jumlah"
-class="jumlah w-full border p-1 bg-gray-100" readonly>
+<td class="p-2 sm:p-3">
+<input type="text"
+class="jumlah w-full border p-1 bg-gray-100 rounded"
+readonly>
 </td>
 
-<td class="p-3 text-center">
+<td class="p-2 sm:p-3 text-center">
 <button onclick="hapusBaris(this)" class="text-red-500">✕</button>
 </td>
 
@@ -76,13 +77,21 @@ class="jumlah w-full border p-1 bg-gray-100" readonly>
 
 </div>
 
-<div class="flex gap-4 mt-6">
+<!-- BUTTON AREA -->
+<div class="flex flex-col sm:flex-row gap-3 mt-6 print:hidden">
 
-<button onclick="tambahBaris()" class="bg-blue-500 text-white px-4 py-2 rounded">
+<button onclick="simpanNota()"
+class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-auto">
+Simpan Nota
+</button>
+
+<button onclick="tambahBaris()"
+class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full sm:w-auto">
 Tambah Barang
 </button>
 
-<button onclick="downloadNota()" class="bg-green-500 text-white px-4 py-2 rounded">
+<button onclick="downloadNota()"
+class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded w-full sm:w-auto">
 Print / Save PDF
 </button>
 
